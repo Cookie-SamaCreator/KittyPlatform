@@ -48,12 +48,15 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        dashHitbox.SetActive(false);
+        if (dashHitbox != null)
+        {
+            dashHitbox.SetActive(false);
+        }
     }
 
     private void Update()
     {
-        dashCooldownTimer -= Time.deltaTime;
+        dashCooldownTimer = Mathf.Max(0f, dashCooldownTimer - Time.deltaTime);
 
         UpdateMovementDirection();
     }
@@ -66,6 +69,12 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         playerInput.onActionTriggered -= OnActionTriggered;
+        StopAllCoroutines();
+
+        if (dashHitbox != null)
+        {
+            dashHitbox.SetActive(false);
+        }
     }
 
     private void OnActionTriggered(InputAction.CallbackContext context)
@@ -95,30 +104,20 @@ public class PlayerController : MonoBehaviour
 
     public void UpdateMovementDirection()
     {
-        Vector3 forward = cameraRoot.forward;
-        Vector3 right = cameraRoot.right;
-
-        forward.y = 0f;
-        right.y = 0f;
-
-        forward.Normalize();
-        right.Normalize();
-
-        Vector3 direction = forward * moveInput.y + right * moveInput.x;
-
-        if(direction.sqrMagnitude > 1f)
-        {
-            direction.Normalize();
-        }
-
-        motor.SetMoveDirection(direction);
+        motor.SetMoveDirection(GetMovementDirection());
     }
 
     private Vector3 GetMovementDirection()
     {
+        if (moveInput.sqrMagnitude <= Mathf.Epsilon || cameraRoot == null)
+        {
+            return Vector3.zero;
+        }
+
         Vector3 forward = cameraRoot.forward;
         Vector3 right = cameraRoot.right;
 
+        // Remove camera pitch so movement stays on the ground plane.
         forward.y = 0f;
         right.y = 0f;
 
@@ -174,7 +173,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnDash(InputAction.CallbackContext context)
     {
-        if(!context.performed || dashCooldownTimer > 0f)
+        if(!context.performed || dashCooldownTimer > 0f || dashSpeed <= 0f || dashDuration <= 0f)
         {
             return;
         }  
@@ -186,13 +185,18 @@ public class PlayerController : MonoBehaviour
             direction = transform.forward;
         }
 
-        motor.Dash(direction,dashSpeed, dashDuration);
+        motor.Dash(direction, dashSpeed, dashDuration);
         StartCoroutine(DashCoroutine(dashDuration));
         dashCooldownTimer = dashCooldown;
     }
 
     private IEnumerator DashCoroutine(float duration)
     {
+        if (dashHitbox == null)
+        {
+            yield break;
+        }
+
         dashHitbox.SetActive(true);
 
         yield return new WaitForSeconds(duration);

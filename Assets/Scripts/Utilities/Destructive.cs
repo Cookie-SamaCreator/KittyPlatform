@@ -4,11 +4,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Destructive : MonoBehaviour
 {
+    private Rigidbody destructiveBody;
+
     private void Awake()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
-        rb.isKinematic = true;
-        rb.useGravity = false;
+        destructiveBody = GetComponent<Rigidbody>();
+
+        // The trigger volume should not be affected by physics.
+        destructiveBody.isKinematic = true;
+        destructiveBody.useGravity = false;
     }
 
     private void OnTriggerEnter(Collider other)

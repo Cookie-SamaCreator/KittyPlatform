@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
@@ -22,9 +21,17 @@ public class CameraController : MonoBehaviour
 
     public void Look(Vector2 lookInput)
     {
+        if (cameraTarget == null || lookInput == Vector2.zero)
+        {
+            return;
+        }
+
         yaw += lookInput.x * sensitivity;
+
+        // Invert vertical look so moving the mouse up looks up.
         pitch -= lookInput.y * sensitivity;
 
+        // Keep the camera from rotating beyond the configured vertical limits.
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
 
         cameraTarget.rotation = Quaternion.Euler(pitch, yaw, 0f);
