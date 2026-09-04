@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7886242569319446832}
   - component: {fileID: 6764383803613800137}
   - component: {fileID: 801732416939473871}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8010430548420189275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CameraTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,9 +132,9 @@ GameObject:
   - component: {fileID: 861136039379999558}
   - component: {fileID: 7199373227230426241}
   - component: {fileID: 8579903704022488954}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 6674154505431045098}
   - component: {fileID: 7398262609941593041}
   - component: {fileID: 4811847159376298958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftBackLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,9 +315,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9077171410191264895}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CameraRoot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,9 +350,9 @@ GameObject:
   - component: {fileID: 3167966750844674228}
   - component: {fileID: 2858313825033019666}
   - component: {fileID: 1338722539606298611}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DashHitbox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 935732464892768597}
   - component: {fileID: 5982238036930317707}
   - component: {fileID: 5656973791591000685}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 4121573044268434771}
   - component: {fileID: 4015768461761916400}
   - component: {fileID: 1743504235195657493}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftFrontLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,9 +628,9 @@ GameObject:
   - component: {fileID: 3455213529147922469}
   - component: {fileID: 2992649078106857542}
   - component: {fileID: 8786430480908481470}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlatformDetector
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -722,7 +722,7 @@ GameObject:
   - component: {fileID: 1947590849731741780}
   - component: {fileID: 4686845745909237635}
   - component: {fileID: 1945845795344105004}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RighBackLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -812,7 +812,7 @@ GameObject:
   - component: {fileID: 1497320344658066190}
   - component: {fileID: 1489537315609731117}
   - component: {fileID: 6346427300303064390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RighFrontLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -905,9 +905,9 @@ GameObject:
   - component: {fileID: 1481315834964089494}
   - component: {fileID: 2762690790481911353}
   - component: {fileID: 7026310463146539307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1047,7 +1047,7 @@ GameObject:
   - component: {fileID: 6974508229127101118}
   - component: {fileID: 1376838611254758794}
   - component: {fileID: 2587979826652092953}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightEye
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 7669320}
   - component: {fileID: 7669319}
   - component: {fileID: 7669318}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1727,7 +1727,7 @@ GameObject:
   - component: {fileID: 672816034}
   - component: {fileID: 672816033}
   - component: {fileID: 672816032}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2098,7 +2098,7 @@ GameObject:
   - component: {fileID: 704933153}
   - component: {fileID: 704933152}
   - component: {fileID: 704933151}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2454,7 +2454,7 @@ GameObject:
   - component: {fileID: 768884270}
   - component: {fileID: 768884269}
   - component: {fileID: 768884268}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3111,7 +3111,7 @@ GameObject:
   - component: {fileID: 1309191943}
   - component: {fileID: 1309191942}
   - component: {fileID: 1309191941}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3646,7 +3646,7 @@ GameObject:
   - component: {fileID: 1330362507}
   - component: {fileID: 1330362506}
   - component: {fileID: 1330362505}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4360,7 +4360,7 @@ GameObject:
   - component: {fileID: 1569400885}
   - component: {fileID: 1569400884}
   - component: {fileID: 1569400883}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4757,14 +4757,14 @@ MonoBehaviour:
   CameraSide: 0.025
   CameraDistance: 0.45
   AvoidObstacles:
-    Enabled: 0
+    Enabled: 1
     CollisionFilter:
       serializedVersion: 2
-      m_Bits: 1
-    IgnoreTag: 
-    CameraRadius: 0.2
-    DampingIntoCollision: 0
-    DampingFromCollision: 0.5
+      m_Bits: 8
+    IgnoreTag: Player
+    CameraRadius: 0.08
+    DampingIntoCollision: 0.05
+    DampingFromCollision: 0.15
 --- !u!114 &1594520666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4838,7 +4838,7 @@ GameObject:
   - component: {fileID: 1721280267}
   - component: {fileID: 1721280266}
   - component: {fileID: 1721280271}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5243,6 +5243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoopMovingObstacle
       objectReference: {fileID: 0}
+    - target: {fileID: 372659334620252356, guid: 729234bd288c13a4c887db8f66eed43d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1136635502864514395, guid: 729234bd288c13a4c887db8f66eed43d, type: 3}
       propertyPath: m_Size.y
       value: 0.97
@@ -5261,7 +5265,7 @@ PrefabInstance:
       objectReference: {fileID: 60135073}
     - target: {fileID: 3635544131796349570, guid: 729234bd288c13a4c887db8f66eed43d, type: 3}
       propertyPath: m_VersionIndex
-      value: 35
+      value: 38
       objectReference: {fileID: 0}
     - target: {fileID: 4307188730661077632, guid: 729234bd288c13a4c887db8f66eed43d, type: 3}
       propertyPath: m_Mesh
@@ -5360,10 +5364,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2762690790481911353, guid: 34cf37fd91318ef46b06ecef4c998ddb, type: 3}
-      propertyPath: m_NotificationBehavior
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5253865778869290740, guid: 34cf37fd91318ef46b06ecef4c998ddb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5404,28 +5404,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5377998074370553375, guid: 34cf37fd91318ef46b06ecef4c998ddb, type: 3}
-      propertyPath: groundCheckRadius
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5377998074370553375, guid: 34cf37fd91318ef46b06ecef4c998ddb, type: 3}
-      propertyPath: groundCheckDistance
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 5434754860019959749, guid: 34cf37fd91318ef46b06ecef4c998ddb, type: 3}
-      propertyPath: cameraTarget
-      value: 
-      objectReference: {fileID: 496150138}
-    - target: {fileID: 5434754860019959749, guid: 34cf37fd91318ef46b06ecef4c998ddb, type: 3}
-      propertyPath: cameraTransform
-      value: 
-      objectReference: {fileID: 330585546}
     - target: {fileID: 8256424743699111096, guid: 34cf37fd91318ef46b06ecef4c998ddb, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8256424743699111096, guid: 34cf37fd91318ef46b06ecef4c998ddb, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
